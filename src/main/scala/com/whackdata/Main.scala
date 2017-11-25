@@ -27,10 +27,10 @@ object Main extends App {
   // Paths.get("/some/path/to/a/file.gpkg") if you don't care about this working
   // across operating systems
   val inPath = Paths.get("src", "main", "resources", "Canada3573.gpkg").toAbsolutePath
+  val outPathShp = Paths.get("temp", "Canada3573Shp", "Canada3573.shp").toAbsolutePath
 
   // Build your command, putting each part of the command in a separate string
   // stored as elements in an array
-  val outPathShp = Paths.get("temp", "Canada3573Shp", "Canada3573.shp").toAbsolutePath
   val cmdShp = Array("-f", "ESRI Shapefile", outPathShp.toString, inPath.toString)
 
   // Execute the conversion asynchronously and print a success/failure message
